@@ -182,10 +182,9 @@ const workExperiences = {
       company: "TRU Recognition, Melbourne AUS",
       companylogo: require("./assets/images/truLogo.png"),
       date: "Nov 2023 – Present",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      desc: "",
       descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+
       ]
     },
     {
@@ -193,14 +192,14 @@ const workExperiences = {
       company: "Phoenix AI, Peruwelz BE",
       companylogo: require("./assets/images/phoenixaiLogo.png"),
       date: "Sep 2021  – Jan 2023",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      desc: ""
     },
     {
       role: "Computer Vision Software Engineer - Internship",
       company: "Infrabel, Brussels BE",
       companylogo: require("./assets/images/infrabelLogo.png"),
       date: "Jul 2020 – Sep 2020",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      desc: ""
     }
   ]
 };
