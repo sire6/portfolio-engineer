@@ -49,7 +49,7 @@ const skillsSection = {
     emoji("⚡ Design and implement scalable and efficient AI solutions for real-world applications"),
     emoji("⚡ Develop and deploy AI pipelines with efficiency and quality in mind."),
     emoji("⚡ Establish processes to evaluate and compare models based on client datasets"),
-    emoji("⚡ Pipeline throughput optimization and performance tuning"),
+    emoji("⚡ AI pipeline throughput optimization and performance tuning"),
     emoji("⚡ Design and implement scalable and efficient AI solutions for real-world applications"),
     emoji("⚡ Manage data pipelines, whether by preparing and transforming data for processing or by post-processing the output to extract maximum value.") 
   ],
