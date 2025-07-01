@@ -1,46 +1,48 @@
 import React, { useState } from "react";
 
-// Use environment variables for Telegram config
-const TELEGRAM_BOT_TOKEN = process.env.REACT_APP_TELEGRAM_BOT_TOKEN || "";
-const TELEGRAM_CHAT_ID = process.env.REACT_APP_TELEGRAM_CHAT_ID || "";
-
+// TelegramForm component: handles a contact form and sends the message to a secure backend
 export default function TelegramForm() {
+  // State for form fields (name, email, message)
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  // State for status message (feedback to user)
   const [status, setStatus] = useState("");
 
+  // Handle input changes and update form state
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  // Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("Sending...");
+    e.preventDefault(); // Prevent default form submission behavior
+    setStatus("Sending..."); // Show sending status
+    // Format the message to be sent
     const text = `New portfolio contact\nName: ${form.name}\nEmail: ${form.email}\nMessage: ${form.message}`;
     try {
-      const resp = await fetch(
-        `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            chat_id: TELEGRAM_CHAT_ID,
-            text,
-          }),
-        }
-      );
+      // Use relative URL so the frontend proxy can route to backend
+      const resp = await fetch("/send-telegram", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text }),
+      });
       if (resp.ok) {
+        // If successful, reset form and show success message
         setStatus("Message sent!");
         setForm({ name: "", email: "", message: "" });
       } else {
+        // If backend returns error
         setStatus("Error while sending.");
       }
     } catch (err) {
+      // If network error occurs
       setStatus("Network error.");
     }
   };
 
+  // Render the contact form
   return (
     <form className="telegram-form" onSubmit={handleSubmit} style={{marginTop: 32}}>
+      {/* Name input field */}
       <input
         type="text"
         name="name"
@@ -49,6 +51,7 @@ export default function TelegramForm() {
         onChange={handleChange}
         required
       />
+      {/* Email input field */}
       <input
         type="email"
         name="email"
@@ -58,6 +61,7 @@ export default function TelegramForm() {
         required
       />
       <br />
+      {/* Message textarea */}
       <textarea
         name="message"
         placeholder="Your message"
@@ -66,7 +70,9 @@ export default function TelegramForm() {
         required
         rows={4}
       />
+      {/* Submit button */}
       <button type="submit">Send</button>
+      {/* Status message (success, error, etc.) */}
       {status && <div className="telegram-form-status">{status}</div>}
     </form>
   );
