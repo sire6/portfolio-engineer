@@ -2,6 +2,7 @@
 
 .contact-div-main {
   display: flex;
+  gap: 2rem;
 }
 
 .dark-mode a {
@@ -13,36 +14,42 @@
 }
 
 .contact-title {
-  font-size: 65px;
-  font-weight: 400;
+  font-size: 56px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
 .contact-detail,
 .contact-detail-email {
-  margin-top: 20px;
-  font-size: 40px;
+  margin-top: 16px;
+  font-size: 22px;
   font-weight: 400;
   color: $subTitle;
   text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
 }
 
 .contact-detail:hover,
 .contact-detail-email:hover {
   color: $textColor;
   text-shadow: 2px 1px 2px $contactDetailHoverTS;
-  transition: all 0.3s;
 }
 
 .contact-subtitle {
   text-transform: uppercase;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
 .contact-text-div {
   margin-top: 1.5rem;
+  text-align: center;
 }
 
 .contact-margin-top {
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 
 .contact-image-div > img {
@@ -50,38 +57,114 @@
   height: auto;
   margin-left: 1.5rem;
   margin-top: -4rem;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #f8fafc;
+  box-shadow: 0 2px 12px rgba(34, 158, 217, 0.08);
 }
 
-/* Media Query */
-@media (max-width: 1380px), (max-width: 768px) {
-  .contact-title {
-    font-size: 56px;
-    font-weight: 400;
-    text-align: center;
-  }
+.telegram-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  align-items: stretch;
+  width: 100%;
+  max-width: 370px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), 0 1.5px 4px rgba(34, 158, 217, 0.07);
+  padding: 1.2rem 1.7rem 1.7rem 1.7rem;
+  border: 2px solid #229ed9;
+  margin-left: auto;
+  margin-right: auto;
+  transition: box-shadow 0.2s, border 0.2s;
+}
+.dark-mode .telegram-form {
+  background: #181c24;
+  border-color: #229ed9;
+}
+.telegram-form input,
+.telegram-form textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #d0d7de;
+  font-size: 2rem;
+  font-family: inherit;
+  box-sizing: border-box;
+  line-height: 1.4;
+  background: #f8fafc;
+  color: #222;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.telegram-form input:focus,
+.telegram-form textarea:focus {
+  border: 1.5px solid #229ed9;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(34, 158, 217, 0.08);
+}
+.telegram-form textarea {
+  min-height: 2.7rem;
+  resize: vertical;
+  display: block;
+  font-size: 1rem;
+}
+.telegram-form input::placeholder{
+  text-align: left;
+  color: #b0b8c1;
+  font-size: 1.6rem;
+}
+.telegram-form textarea::placeholder {
+  text-align: left;
+  color: #b0b8c1;
+  font-size: 1rem;
+}
+.telegram-form button {
+  background: linear-gradient(90deg, #229ed9 60%, #176cae 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(34, 158, 217, 0.08);
+  margin-top: 0.5rem;
+}
+.telegram-form button:hover {
+  background: linear-gradient(90deg, #176cae 60%, #229ed9 100%);
+  box-shadow: 0 4px 16px rgba(34, 158, 217, 0.15);
+}
+.telegram-form-status {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #229ed9;
+  text-align: center;
+}
 
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-div-main {
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+    justify-content: center;
+  }
   .contact-title {
     font-size: 40px;
-    text-align: center;
   }
-
-  .contact-subtitle {
-    font-size: 16px;
-    line-height: normal;
-    text-align: center;
-  }
-
-  .contact-text-div {
-    text-align: center;
-    margin-top: 1.5rem;
-  }
-
   .contact-detail,
   .contact-detail-email {
-    font-size: 20px;
+    font-size: 18px;
   }
-
-  .contact-image-div {
-    display: none;
+  .telegram-form {
+    max-width: 98vw;
+    width: auto;
+    padding: 1rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

@@ -10,7 +10,11 @@
 }
 
 .software-skill-inline {
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 90px;
   margin-right: 20px;
   margin-bottom: 20px;
 }
@@ -24,7 +28,11 @@
 }
 .software-skill-inline > p {
   color: $subTitle;
-  font-size: 10px;
+  font-size: 11px;
+  margin: 6px 0 0 0;
+  text-align: center;
+  word-break: break-word;
+  max-width: 90px;
 }
 .software-skill-inline > i:hover ~ p {
   color: $skillsColor;

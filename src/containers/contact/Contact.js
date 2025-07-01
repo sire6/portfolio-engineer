@@ -6,6 +6,7 @@ import {Fade} from "react-reveal";
 import email from "../../assets/lottie/email";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import StyleContext from "../../contexts/StyleContext";
+import TelegramForm from "./TelegramForm";
 
 export default function Contact() {
   const {isDark} = useContext(StyleContext);
@@ -47,7 +48,7 @@ export default function Contact() {
               >
                 {contactInfo.email_address}
               </a>
-              <br />
+              <TelegramForm />
               <br />
               <SocialMedia />
             </div>

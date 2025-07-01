@@ -91,6 +91,13 @@
   border-radius: 50%;
 }
 
+.experience-roundedimg[alt*="Phoenix AI"],
+.experience-roundedimg[alt*="Infrabel"] {
+  object-fit: contain;
+  background: #fff;
+  padding: 0.2rem;
+}
+
 .experience-text-role {
   text-align: center;
   color: $textColor;
